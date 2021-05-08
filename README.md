@@ -10,6 +10,9 @@
 
 ## Data gathering
 
+- reddit
+- twitter
+
 ## Methodology
 
 ## Results
