@@ -14,7 +14,7 @@
 - data for r/cryptocurrency can be read directly from (file size > 50MB) 
     `df_crypto = pd.read_csv('https://www.physics.rutgers.edu/~khanal/tmp/df_crypto.csv')`
 - data for r/investing can be read from local file (small file size)
-    `df_invest = pd.read_csv('df_investing.csv')`
+    `df_invest = pd.read_csv(ROOT_DIR+'01_data_gathering/df_investing.csv')`
 
 ### Twitter
 
