@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 import pylab as plt
 
-
 def connect_engine(engine_name="db.sqlite"):
     conn = sqlite3.connect(engine_name)
     c = conn.cursor()
