@@ -18,6 +18,8 @@
 - The complete database 'redditPosts.sqlite' (file size > 700MB) can be accessed via the following link https://drive.google.com/file/d/18QKkuO4c7gGXqYfq-Y2mZam_EUJyMFip/view?usp=sharing
 
 ### Twitter
+- Data of all individual tweets with containing the phrases 'GameStop' and either $GME or #GME in the main body of the tweet from 12/25/2020 to 05/19/2021.
+
 
 ## Methodology
 
