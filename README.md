@@ -19,6 +19,9 @@
 
 ### Twitter
 - Data of all individual tweets with containing the phrases 'GameStop' and either $GME or #GME in the main body of the tweet from 12/25/2020 to 05/19/2021.
+- TWEETS_individual contains each indiviual tweets along with its metrics: retweets, likes, replies and media.
+- TWEETS_grouped contains twitter data grouped by each time period
+- USERS contains meterics for each users profile and the metrics for the corresponding tweets in TWEETS_individual.
 
 
 ## Methodology
