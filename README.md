@@ -15,6 +15,7 @@
     `df_crypto = pd.read_csv('https://www.physics.rutgers.edu/~khanal/tmp/df_crypto.csv')`
 - data for r/investing can be read from local file (small file size)
     `df_invest = pd.read_csv(ROOT_DIR+'01_data_gathering/df_investing.csv')`
+- The complete database 'redditPosts.sqlite' can be accessed via the following link https://drive.google.com/file/d/18QKkuO4c7gGXqYfq-Y2mZam_EUJyMFip/view?usp=sharing
 
 ### Twitter
 
