@@ -15,8 +15,14 @@
     `df_crypto = pd.read_csv('https://www.physics.rutgers.edu/~khanal/tmp/df_crypto.csv')`
 - data for r/investing can be read from local file (small file size)
     `df_invest = pd.read_csv(ROOT_DIR+'01_data_gathering/df_investing.csv')`
+- The complete database 'redditPosts.sqlite' (file size > 700MB) can be accessed via the following link https://drive.google.com/file/d/18QKkuO4c7gGXqYfq-Y2mZam_EUJyMFip/view?usp=sharing
 
 ### Twitter
+- Data of all individual tweets with containing the phrases 'GameStop' and either $GME or #GME in the main body of the tweet from 12/25/2020 to 05/19/2021.
+- TWEETS_individual contains each indiviual tweets along with its metrics: retweets, likes, replies and media.
+- TWEETS_grouped contains twitter data grouped by each time period
+- USERS contains meterics for each users profile and the metrics for the corresponding tweets in TWEETS_individual.
+
 
 ## Methodology
 
