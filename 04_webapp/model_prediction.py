@@ -83,7 +83,7 @@ def make_prediction(url):
     return pred
 
 if __name__=="__main__":
-    in1 = "https://www.reddit.com/r/postsreddit/comments/jjuci1/do_people_engage_more_when_you_post_an_earnest/"
-    pred = make_prediction(in1)
+    input_url = "https://www.reddit.com/r/postsreddit/comments/jjuci1/do_people_engage_more_when_you_post_an_earnest/"
+    pred = make_prediction(input_url)
     print (pred)
 
