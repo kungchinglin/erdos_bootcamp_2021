@@ -28,3 +28,8 @@ We try to have a wide array of financial subreddits to see if there is any varia
 | r/Superstonks   | 146       | Yes|
 
 Due to the low speed of PRAW, we were not able to complete gathering information for the top three subreddits. As such, we only worked on the subreddits with complete information.
+
+## Twitter  (Main Contributor: Shahnawaz Khalid)
+
+To be added/
+
