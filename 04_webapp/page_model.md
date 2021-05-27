@@ -21,12 +21,4 @@ I'm currently editing this. Let Dyas know if you want to make edit as well.
 
 We train and evaluate the data using the following models. When training, we modified the weight of the loss function by (100/x)-1, where x is the percentage of popular posts, to deal with imbalance date.
 
-## Logistic Regression
-
-## Random Forest Classifier
-
-## XGBoost
-
-![picture](../figures/prec_rec_curve_xgb_tfidf_DU.png)
-
-## AdaBoost
+![picture](../figures/prec_rec_curve_summary_DU.png)
