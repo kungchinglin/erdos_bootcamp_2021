@@ -2,8 +2,6 @@
 
 Our case is a binary classification: we predict popular posts, defined as the posts with top 5% percentile of scores.
 
-To train and evaluate the data, we split the data (into training and test sets) by time. We use Jan-Mar posts as training set and April posts as test set.
-
 We include and combine the following as features into TF-IDF:
 1. Title of post
 2. Body of post
@@ -16,6 +14,10 @@ We include and combine the following as features into TF-IDF:
 9. The number of emoji in title and body
 10. The number of exclamation and question marks in title and body
 11. The number of upper and lower cases in title and body
+
+We split the data (into training and test sets) by time. We use Jan-Mar posts as training set and April posts as test set.
+
+We train and evaluate the data using the following models:
 
 ## Logistic Regression
 
