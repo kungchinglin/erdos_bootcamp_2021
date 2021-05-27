@@ -4,6 +4,8 @@ I'm currently editing this. Let Dyas if you want to make edit as well.
 
 Our case is a binary classification: we predict popular posts, defined as the posts with top 5% percentile of scores.
 
+We modified the weight of the loss function by (100/x)-1, where x is the percentage of popular posts.
+
 We include and combine the following features into TF-IDF:
 1. Title of post
 2. Body of post
