@@ -19,6 +19,8 @@ I'm currently editing this. Let Dyas know if you want to make edit as well.
 
 **Data splitting:** We split the data (into training and test sets) by time. We use Jan-Mar posts as training set and April posts as test set.
 
-We train and evaluate the data using the following models. When training, we modified the weight of the loss function by (100/x)-1, where x is the percentage of popular posts, to deal with imbalance date.
+**Training:** We train the following models: logistic regression, random forest classifier, XGBoost, and AdaBoost. When training, we modified the weight of the loss function by (100/x)-1, where x is the percentage of popular posts, to deal with imbalance date.
+
+**Model Performance:** We compare the models performace using the precision-recall curves.
 
 ![picture](../figures/prec_rec_curve_summary_DU.png)
