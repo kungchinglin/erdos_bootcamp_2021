@@ -1,4 +1,4 @@
-I'm currently editing this. Let Dyas if you want to make edit as well.
+I'm currently editing this. Let Dyas know if you want to make edit as well.
 
 # Modeling
 
