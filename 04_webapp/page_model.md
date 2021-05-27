@@ -1,3 +1,5 @@
+I'm currently editing this. Let Dyas if you want to make edit as well.
+
 # Modeling
 
 Our case is a binary classification: we predict popular posts, defined as the posts with top 5% percentile of scores.
