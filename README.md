@@ -28,4 +28,8 @@
 
 ## Results
 
+## Web Application
+
+- Wrote a web application using streamlit and hosted on heroku on the `gristock.herokuapp.com`
+
 ## Future Work
