@@ -25,4 +25,6 @@ We train and evaluate the data using the following models:
 
 ## XGBoost
 
+![picture](../figures/box_plots_different_types.png)
+
 ## AdaBoost
