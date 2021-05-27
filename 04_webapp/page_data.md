@@ -9,7 +9,7 @@ There are two main APIs for reddit posts: PRAW and Pushshift. Although there are
 
 ### Trade-offs Between PRAW and Pushshift
 
-The reason we use both APIs to obtain post information is because there are trade-offs between the two APIs. Pushshift is much quicker for data requests than PRAW but does not record real-time scores, as it maintains a copy of all reddit posts by updating continually. Thus, we needed to request information of all posts from Pushshift before retrieving the real-time score from PRAW by post ids.
+The reason we use both APIs to obtain post information is because there are trade-offs between the two APIs. Pushshift is much quicker for data requests than PRAW but does not record real-time scores, as it maintains a copy of all reddit posts by updating continually. Thus, we needed to request information of all posts from Pushshift before retrieving the real-time score from PRAW by post ids. The corresponding file for data gathering can be found [here](https://github.com/kungchinglin/erdos_bootcamp_2021/blob/main/01_data_gathering/Data_gathering.ipynb).
 
 ### Dataset Description
 
