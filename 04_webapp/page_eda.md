@@ -22,15 +22,29 @@ We are also interested in whether authors should be included as one of the featu
 ![Author Contribution](../figures/author_contributions.png)
 
     
-It can be seen that posters in GME and dogecoin have a much higher proportion of being highly active, with more than $5\%$ posters with more than $10$ posts.
+It can be seen that posters in GME and dogecoin have a much higher proportion of being highly active, with more than 5\% posters with more than 10 posts.
     
 ![Authors vs Upvotes](../figures/authors_vs_upvotes.png)
 
 ## Other Factors
     
 We also looked into other factors such as the time of the day and the text length. There are certain periods of times where the posts have a higher upvote ratio (upvotes/downvotes), so it indicates that including it as a feature may be sensible. For text lengths, it is harder to see a trend, though longer posts tend to be more upvoted for r/options.
-    
-![Upvotes vs Time](../figures/upvotes_vs_time.png)
+
+### Time Dependency
+
+![Upvotes vs Time](../figures/Popularity_vs_day_and_hour.png)
+
+### Sensation Analysis
+
+We can distinguish the types of posts by looking at some characteristics of the post: number of emojis used, number of uppercase letters, and the number of exclamation points/question marks. As they do contain information for predicting popularity, we end up including those.
+
+![Number of Uppercase Letters](../figures/Popularity_vs_uppercase.png)
+
+![Number of Exclamation Points](../figures/Popularity_vs_exclamation.png)
+
+It turns out that normalizing the number of exclamation points in the titles yields additional information.
+
+![Normalized Number of Exclamation Points](../figures/normalized_title_EQ.png)
 
 
 ![Upvotes vs Length](../figures/upvotes_vs_length.png)
