@@ -50,6 +50,7 @@ Numerous models have been tried out, including logistic regression, decision tre
 
 ![caption = "The difference between calibrated models and uncalibrated ones."](../figures/calibrate_adaboost.png)
 ![caption = "The PR curve for the calibrated random forest."](../figures/calibrate_random_forest.png)
+
 After calibration, the PR curve jumps to almost the same level as other approaches.
 
 
