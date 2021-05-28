@@ -2,7 +2,7 @@
 
 Due to the time constraints, we have a few ideas we could not try out but hope to do so in the near future.
 
-## BERT
+## State-of-the-art Models
 For deriving contexts, BERT is an excellent tool. However, we did not have the time to train this model.
 
 ## Image Transcription
