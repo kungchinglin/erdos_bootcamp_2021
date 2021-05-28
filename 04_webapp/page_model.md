@@ -25,7 +25,7 @@ From our exploratory data analysis, we considered the following features as our 
 10. The number of exclamation points and question marks in the title and the body <br/>
 11. The number of uppercases in the title and the body <br/>
 12. The number of tweets, likes, and retweets, and the (weighted) sentiment with specific keywords three days preceding the post submission
-13. The mean upvotes
+13. The mean upvotes of the author in the specific subreddit up to submission time.
 
 ## Evaluation Metrics
 
@@ -44,13 +44,13 @@ We have proposed several versions of modeling approaches, each of which yielding
 
 ### Probability Calibration Only
 
-It is also possible to not perform any vectorization of texts and still get similar performance. In that sense, this model does not detect the context of the posts but only the general sensation (Emojis, uppercases, \!/?). After backward feature selection, we found out that the Twitter information 
+It is also possible to not perform any vectorization of texts and still get similar performance. In that sense, this model does not detect the context of the posts but only the general sensation (Emojis, uppercases, \!/?). After backward feature selection, we found out that the Twitter information, as well as the post sentiment, do not give any improvement on the model prediction, so we dropped those in our model.
 
 Numerous models have been tried out, including logistic regression, decision trees, random forests, XGBoost, Adaboost, and voting classifiers. However, during early iterations, voting classifiers seemed to perform much worse than its individual parts. Our guess was that the models are not calibrated in the probability prediction.
 
 ![caption = "The difference between calibrated models and uncalibrated ones."](../figures/calibrate_adaboost.png)
 
-After calibration, the PR curve jumps to the same level as other approaches, and 
+After calibration, the PR curve jumps to almost the same level as other approaches.
 
 
 ## Summary
