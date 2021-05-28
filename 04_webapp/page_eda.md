@@ -22,15 +22,17 @@ We are also interested in whether authors should be included as one of the featu
 ![Author Contribution](../figures/author_contributions.png)
 
     
-It can be seen that posters in GME and dogecoin have a much higher proportion of being highly active, with more than $5\%$ posters with more than $10$ posts.
+It can be seen that posters in GME and dogecoin have a much higher proportion of being highly active, with more than 5\% posters with more than 10 posts.
     
 ![Authors vs Upvotes](../figures/authors_vs_upvotes.png)
 
 ## Other Factors
     
 We also looked into other factors such as the time of the day and the text length. There are certain periods of times where the posts have a higher upvote ratio (upvotes/downvotes), so it indicates that including it as a feature may be sensible. For text lengths, it is harder to see a trend, though longer posts tend to be more upvoted for r/options.
-    
-![Upvotes vs Time](../figures/upvotes_vs_time.png)
+
+### Time Dependency
+
+![Upvotes vs Time](../figures/Popularity_vs_day_and_hour.png)
 
 
 ![Upvotes vs Length](../figures/upvotes_vs_length.png)
