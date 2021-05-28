@@ -36,6 +36,13 @@ With that in mind, we evaluate our models based on precision-recall curves, with
 
 We have proposed several versions of modeling approaches, each of which yielding similar performance and has room for improvement. It suggests that the features we select may be insufficient for predicting the popularity (high bias).
 
+### TF-IDF
+
+### Word2Vec
+
+### Probability Calibration Only
+
+It is also possible to not perform any vectorization of texts and still get similar performance.
 
 
 **Features:** We include the following features and combine them via TF-IDF and Word2Vec:
