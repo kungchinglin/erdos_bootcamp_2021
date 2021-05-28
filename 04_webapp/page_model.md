@@ -29,6 +29,6 @@ From our exploratory data analysis, we selected the following features as our ca
 
 **Training:** We train the following models: logistic regression, random forest classifier, XGBoost, and AdaBoost. To deal with imbalance data, we modified the weight of the loss function by (100/*x*)-1, where *x* is the percentage of popular posts.
 
-**Model Performance:** We compare the models performace using the precision-recall curves.
+**Model Performance:** We compare the models performace using the precision-recall curves. As shown below, model perfomances are more or less similar, but XGBoost gives the best performance.
 
 ![picture](../figures/prec_rec_curve_summary_DU.png)
