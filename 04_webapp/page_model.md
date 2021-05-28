@@ -23,7 +23,7 @@ From our exploratory data analysis, we considered the following features as our 
 8. The length of the title <br/>
 9. The number of emoji counts in the title and the body <br/>
 10. The number of exclamation points and question marks in the title and the body <br/>
-11. The number of upper and lower cases in the title and the body <br/>
+11. The number of uppercases in the title and the body <br/>
 12. The number of tweets, likes, and retweets, and the (weighted) sentiment with specific keywords three days preceding the post submission
 
 ## Evaluation Metrics
@@ -38,12 +38,21 @@ We have proposed several versions of modeling approaches, each of which yielding
 
 ### TF-IDF
 
+![caption = "Summary for TF-IDF models."](../figures/prec_rec_curve_summary_DU.png)
 ### Word2Vec
 
 ### Probability Calibration Only
 
-It is also possible to not perform any vectorization of texts and still get similar performance.
+It is also possible to not perform any vectorization of texts and still get similar performance. In that sense, this model does not detect the context of the posts but only the general sensation (Emojis, uppercases, \!/?). 
 
+Numerous models have been tried out, including logistic regression, decision trees, random forests, XGBoost, Adaboost, and voting classifiers. However, during early iterations, voting classifiers seemed to perform much worse than its individual parts. Our guess was that the models are not calibrated in the probability prediction.
+
+![caption = "The difference between calibrated models and uncalibrated ones."](../figures/calibrate_adaboost.png)
+
+As such, we 
+
+
+## Summary
 
 **Features:** We include the following features and combine them via TF-IDF and Word2Vec:
 
@@ -51,4 +60,4 @@ It is also possible to not perform any vectorization of texts and still get simi
 
 **Model Performance:** We compare the models performace using the precision-recall curves. As shown below, model perfomances are more or less similar, but XGBoost gives the best performance.
 
-![picture](../figures/prec_rec_curve_summary_DU.png)
+
