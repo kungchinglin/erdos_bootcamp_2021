@@ -37,10 +37,10 @@ With that in mind, we evaluate our models based on precision-recall curves, with
 
 We have proposed several versions of modeling approaches, each of which yielding similar performance and has room for improvement. It suggests that the features we select may be insufficient for predicting the popularity (high bias).
 
-### TF-IDF (Main Contributor: Ghanashyam Khanal, Dyas Utomo)
+### TF-IDF (Main Contributors: Ghanashyam Khanal, Dyas Utomo)
 
 ![caption = "Summary for TF-IDF models."](../figures/prec_rec_curve_summary_DU.png)
-### Word2Vec (Main Contributor: Ghanashyam Khanal, Dyas Utomo)
+### Word2Vec (Main Contributors: Ghanashyam Khanal, Dyas Utomo)
 
 ### Probability Calibration Only (Main Contributor: Kung-Ching Lin)
 
