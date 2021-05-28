@@ -24,16 +24,16 @@ We are also interested in whether authors should be included as one of the featu
     
 It can be seen that posters in GME and dogecoin have a much higher proportion of being highly active, with more than 5\% posters with more than 10 posts.
 
-
-## Other Factors
     
 We also looked into other factors such as the time of the day and the text length. There are certain periods of times where the posts have a higher upvote ratio (upvotes/downvotes), so it indicates that including it as a feature may be sensible. For text lengths, it is harder to see a trend, though longer posts tend to be more upvoted for r/options.
 
-### Time Dependency
+## Time Dependency
 
 ![Upvotes vs Time](../figures/Popularity_vs_day_and_hour.png)
 
-### Sensation Analysis
+Here, we plot out the heatmap of popularity chances with respect to hour and day. It can be seen that there are apparent hot zones for post popularities. It suggests that the submission time does matter for prediction.
+
+## Sensation Analysis
 
 We can distinguish the types of posts by looking at some characteristics of the post: number of emojis used, number of uppercase letters, and the number of exclamation points/question marks. As they do contain information for predicting popularity, we end up including those.
 
