@@ -11,7 +11,7 @@ sklearn.model_selection.TimeSeriesSplit
 
 ## Features
 
-From our exploratory data analysis, we selected the following features as our candidates for features.
+From our exploratory data analysis, we considered the following features as our candidates for features.
 
 1. Title of post <br/>
 2. Body of post <br/>
@@ -24,6 +24,17 @@ From our exploratory data analysis, we selected the following features as our ca
 9. The number of emoji counts in the title and the body <br/>
 10. The number of exclamation points and question marks in the title and the body <br/>
 11. The number of upper and lower cases in the title and the body <br/>
+12. The number of tweets, likes, and retweets with specific keywords three days preceding the post submission
+
+## Evaluation Metrics
+
+The stakeholders of this project are the traders of the firm, and we believe they will be interested in seeing high precision and/or high recall rate depending on their purposes. If a significant amount of money is involved based on the prediction outcome, then increasing the precision will be paramount. On the other hand, if only an exploration of what are potentially popular is needed, then having high recall will be more appropriate.
+
+With that in mind, we evaluate our models based on precision-recall curves, with an emphasis for high precision. In our deployed model, the user can freely choose whether they want to be aggressive (high recall) or conservative (high precision).
+
+## Model Selection
+
+We have proposed several versions of modeling approaches
 
 **Features:** We include the following features and combine them via TF-IDF and Word2Vec:
 
