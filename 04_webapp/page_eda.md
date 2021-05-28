@@ -23,8 +23,7 @@ We are also interested in whether authors should be included as one of the featu
 
     
 It can be seen that posters in GME and dogecoin have a much higher proportion of being highly active, with more than 5\% posters with more than 10 posts.
-    
-![Authors vs Upvotes](../figures/authors_vs_upvotes.png)
+
 
 ## Other Factors
     
@@ -48,5 +47,3 @@ It turns out that normalizing the number of exclamation points in the titles yie
 
 ![Normalized Number of Exclamation Points](../figures/normalized_title_EQ.png)
 
-
-![Upvotes vs Length](../figures/upvotes_vs_length.png)
