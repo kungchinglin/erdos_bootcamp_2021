@@ -29,7 +29,16 @@ We try to have a wide array of financial subreddits to see if there is any varia
 
 Due to the low speed of PRAW, we were not able to complete gathering information for the top three subreddits. As such, we only worked on the subreddits with complete information.
 
-## Twitter  (Main Contributor: Shahnawaz Khalid)
+## Twitter Data  (Main Contributor: Shahnawaz Khalid)
 
-To be added/
+We used the new [Twitter API v2](https://developer.twitter.com/en/docs/twitter-api) to obtain tweets from Dec 25th 2020 to May 20th 2021. We only focused on tweets that mentioned GameStop. To reduce the volume of 'spam' tweets or tweets with no information, we only searched for tweets that had the phrase "GameStop" and either the hashtag #GME or cashtag $GME mentioned in the text. We excluded tweets that were either retweets or replies and limited our search to tweets in english.
+
+### Data Description
+
+Each tweet comes with public metrics; likes, retweets and replies that we used as a basis for measuring popularity. The media attachment with the tweet, if any, was also saved and classified as either an image, video or animated gif. In addition we also pulled data for each user that tweeted that included, number of followers, number of tweets, number of users following and number of lists that the user was part of. These were later used as features for our models. The total number of tweets during this time period was 72823, comprising of 30496 uinque users. 
+
+Finally, the reason GME has been so popular is because of its rapid increase in price. Therefore we extracted stock data consisting of open, close, high, low and volume from Yahoo Finance. However, because we are mainly interested in the changes in prices, we used daily returns, volatility (standard deviation of returns over 5 day window) and variation (square of the difference between log high and log low) as features for our models. 
+
+
+
 
