@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 import re
 import datetime as dt
-
+import requests
+import json
 import praw
 import pickle
 import string
@@ -98,20 +99,20 @@ def weekend(day):
 
 def featureProcessing(df_model):
 
-    df_model['title_emoji'] = df_model['title'].apply(emoji_count)
-    df_model['body_emoji'] = df_model['body'].apply(emoji_count)
-    df_model['title_length'] = df_model['title'].apply(textLength)
-    df_model['body_length'] = df_model['body'].apply(textLength)
-    df_model['title_EQ'] = df_model['title'].apply(exclamationAndQuestion)
-    df_model['body_EQ'] = df_model['body'].apply(exclamationAndQuestion)
-    df_model['title_UL'] = df_model['title'].apply(countUpper)
-    df_model['body_UL'] = df_model['body'].apply(countUpper)    
-    df_model['hour'] = df_model['created'].apply(hourOfDay)
-    df_model['day'] = df_model['created'].apply(dayOfWeek)
-    df_model['post_type'] = df_model['ext_link'].apply(postType)
-    df_model['prime_time'] = df_model['hour'].apply(primeTime)
-    df_model['weekend'] = df_model['day'].apply(weekend)
-    df_model['month'] = df_model['created'].apply(getMonth)
+    df_model['title_emoji'] = emoji_count(df_model['title'])
+    df_model['body_emoji'] = emoji_count(df_model['body'])
+    df_model['title_length'] = textLength(df_model['title'])
+    df_model['body_length'] = textLength(df_model['body'])
+    df_model['title_EQ'] = exclamationAndQuestion(df_model['title'])
+    df_model['body_EQ'] = exclamationAndQuestion(df_model['body'])
+    df_model['title_UL'] = countUpper(df_model['title'])
+    df_model['body_UL'] = countUpper(df_model['body'])    
+    df_model['hour'] = hourOfDay(df_model['created'])
+    df_model['day'] = dayOfWeek(df_model['created'])
+    df_model['post_type'] = postType(df_model['ext_link'])
+    df_model['prime_time'] = primeTime(df_model['hour'])
+    df_model['weekend'] = weekend(df_model['day'])
+    df_model['month'] = getMonth(df_model['created'])
 
     df_model['figures'] = 1 * (df_model['post_type'] == 'figures')
     df_model['outside_link'] = 1 * (df_model['post_type'] == 'outside_link')
@@ -120,31 +121,31 @@ def featureProcessing(df_model):
     df_model['title_EQ_Norm'] = df_model['title_EQ']/df_model['title_length']
     after = dt.datetime(2021,1,1).timestamp()
     
-    for row in range(df_model.shape[0]):
-        df_model.loc[row, ['log_num', 'mean_upvotes']] = getAuthorFeatures(after, df_model.loc[row,'created'] - 1, df_model.loc[row,'subreddit'], df_model.loc[row,'author'])
-    
-    df_model = df_model.drop(columns = ['title','author','subreddit','ext_link','created','body','post_type','title_EQ','score'])
+    df_model['log_num'], df_model['mean_upvotes'] = getAuthorFeatures(after, df_model['created'] - 1, df_model['subreddit'], df_model['author'])
 
-    return df_model
+
+    return np.array([df_model['title_emoji'], df_model['body_emoji'], df_model['title_length'], df_model['body_length'], df_model['body_EQ'],
+       df_model['title_UL'], df_model['body_UL'], df_model['hour'], df_model['day'], df_model['prime_time'], df_model['weekend'],
+       df_model['figures'], df_model['outside_link'], df_model['title_EQ_Norm'], df_model['log_num'], df_model['mean_upvotes']]).reshape((1,-1))
 
     
 
 def get_reddit_info(url):
     Sub = reddit.submission(url = url)
-    data={'score':[Sub.score],
-              'body':[Sub.selftext],
-              'created': [Sub.created_utc],
-              'ext_link': [Sub.url],
-              'title':[Sub.title],
-              'subreddit':[Sub.subreddit.display_name],
-              'author':[Sub.author.name]}
-    return pd.DataFrame(data, index=None)
+    data={'score':Sub.score,
+              'body':Sub.selftext,
+              'created': Sub.created_utc,
+              'ext_link': Sub.url,
+              'title':Sub.title,
+              'subreddit':Sub.subreddit.display_name,
+              'author':Sub.author.name}
+    return data
 
 def process_data(input_url):
-    df = get_reddit_info(input_url)
-    df = featureProcessing(df)
+    data = get_reddit_info(input_url)
+    data = featureProcessing(data)
     
-    return df
+    return data
     
 
     
