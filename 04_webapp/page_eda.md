@@ -42,5 +42,9 @@ We can distinguish the types of posts by looking at some characteristics of the 
 
 ![Number of Exclamation Points](../figures/Popularity_vs_exclamation.png)
 
+It turns out that normalizing the number of exclamation points in the titles yields additional information.
+
+![Normalized Number of Exclamation Points](../figures/normalized_title_EQ.png)
+
 
 ![Upvotes vs Length](../figures/upvotes_vs_length.png)
