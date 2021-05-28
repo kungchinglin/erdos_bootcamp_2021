@@ -13,7 +13,7 @@ In terms of upvotes, there are also differences across subreddits.
 
 ![Different Types](../figures/box_plots_different_types.png)
 
-Even for meme-heavy subs, text-only posts still have a better potential of being more upvoted, which is surprising.
+Even for meme-heavy subs, text-only posts still have a better potential of being highly upvoted, which is surprising.
 
 ## By Authors
 
