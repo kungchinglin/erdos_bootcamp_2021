@@ -143,16 +143,10 @@ def get_reddit_info(url):
 
 def process_data(input_url):
     data = get_reddit_info(input_url)
+    
     data = featureProcessing(data)
     
     return data
-    
-
-    
-
-
-
-
     #df = prepare_score_label(df, ycol='score', threshold=1000)
 
 def predict(X, mode):
@@ -163,8 +157,6 @@ def predict(X, mode):
     else:
         threshold = 0.7
     
-
-
     return saved_model.predict_proba(X)[0,1] > threshold
 
 def make_prediction(url, mode):
@@ -173,7 +165,7 @@ def make_prediction(url, mode):
     return pred
 
 if __name__=="__main__":
-    input_url = "https://www.reddit.com/r/postsreddit/comments/jjuci1/do_people_engage_more_when_you_post_an_earnest/"
+    input_url = ""#"https://www.reddit.com/r/postsreddit/comments/jjuci1/do_people_engage_more_when_you_post_an_earnest/"
     mode = 'aggressive'
 
     reddit = praw.Reddit(
