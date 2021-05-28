@@ -38,6 +38,8 @@ We also looked into other factors such as the time of the day and the text lengt
 
 We can distinguish the types of posts by looking at some characteristics of the post: number of emojis used, number of uppercase letters, and the number of exclamation points/question marks. As they do contain information for predicting popularity, we end up including those.
 
+![Number of Emoji Counts](../figures/Popularity_vs_emojis.png)
+
 ![Number of Uppercase Letters](../figures/Popularity_vs_uppercase.png)
 
 ![Number of Exclamation Points](../figures/Popularity_vs_exclamation.png)
