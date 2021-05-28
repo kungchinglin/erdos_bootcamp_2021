@@ -37,18 +37,19 @@ With that in mind, we evaluate our models based on precision-recall curves, with
 
 We have proposed several versions of modeling approaches, each of which yielding similar performance and has room for improvement. It suggests that the features we select may be insufficient for predicting the popularity (high bias).
 
-### TF-IDF
+### TF-IDF (Main Contributor: Ghanashyam Khanal, Dyas Utomo)
 
 ![caption = "Summary for TF-IDF models."](../figures/prec_rec_curve_summary_DU.png)
-### Word2Vec
+### Word2Vec (Main Contributor: Ghanashyam Khanal, Dyas Utomo)
 
-### Probability Calibration Only
+### Probability Calibration Only (Main Contributor: Kung-Ching Lin)
 
 It is also possible to not perform any vectorization of texts and still get similar performance. In that sense, this model does not detect the context of the posts but only the general sensation (Emojis, uppercases, \!/?). After backward feature selection, we found out that the Twitter information, as well as the post sentiment, do not give any improvement on the model prediction, so we dropped those in our model.
 
 Numerous models have been tried out, including logistic regression, decision trees, random forests, XGBoost, Adaboost, and voting classifiers. However, during early iterations, voting classifiers seemed to perform much worse than its individual parts. Our guess was that the models are not calibrated in the probability prediction.
 
 ![caption = "The difference between calibrated models and uncalibrated ones."](../figures/calibrate_adaboost.png)
+![caption = "The PR curve for the calibrated random forest."](../figures/calibrate_random_forest.png)
 
 After calibration, the PR curve jumps to almost the same level as other approaches.
 
