@@ -24,7 +24,7 @@ From our exploratory data analysis, we considered the following features as our 
 9. The number of emoji counts in the title and the body <br/>
 10. The number of exclamation points and question marks in the title and the body <br/>
 11. The number of upper and lower cases in the title and the body <br/>
-12. The number of tweets, likes, and retweets with specific keywords three days preceding the post submission
+12. The number of tweets, likes, and retweets, and the (weighted) sentiment with specific keywords three days preceding the post submission
 
 ## Evaluation Metrics
 
