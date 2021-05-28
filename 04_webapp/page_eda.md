@@ -34,5 +34,13 @@ We also looked into other factors such as the time of the day and the text lengt
 
 ![Upvotes vs Time](../figures/Popularity_vs_day_and_hour.png)
 
+### Sensation Analysis
+
+We can distinguish the types of posts by looking at some characteristics of the post: number of emojis used, number of uppercase letters, and the number of exclamation points/question marks. As they do contain information for predicting popularity, we end up including those.
+
+![Number of Uppercase Letters](../figures/Popularity_vs_uppercase.png)
+
+![Number of Exclamation Points](../figures/Popularity_vs_exclamation.png)
+
 
 ![Upvotes vs Length](../figures/upvotes_vs_length.png)
