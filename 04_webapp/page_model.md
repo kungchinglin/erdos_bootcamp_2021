@@ -34,7 +34,9 @@ With that in mind, we evaluate our models based on precision-recall curves, with
 
 ## Model Selection
 
-We have proposed several versions of modeling approaches
+We have proposed several versions of modeling approaches, each of which yielding similar performance and has room for improvement. It suggests that the features we select may be insufficient for predicting the popularity (high bias).
+
+
 
 **Features:** We include the following features and combine them via TF-IDF and Word2Vec:
 
