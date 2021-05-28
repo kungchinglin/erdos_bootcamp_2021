@@ -2,7 +2,7 @@
 
 **Objective:** Our case is a binary classification: we predict popular posts, defined as the posts with top 5% percentile of scores in each subreddit forum.
 
-**Features:** We include and combine the following features into TF-IDF:
+**Features:** We include the following features and combine them via TF-IDF and Word2Vec:
 1. Title of post <br/>
 2. Body of post <br/>
 3. Author's name <br/>
