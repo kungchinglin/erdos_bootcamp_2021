@@ -49,7 +49,7 @@ It is also possible to not perform any vectorization of texts and still get simi
 Numerous models have been tried out, including logistic regression, decision trees, random forests, XGBoost, Adaboost, and voting classifiers. However, during early iterations, voting classifiers seemed to perform much worse than its individual parts. Our guess was that the models are not calibrated in the probability prediction.
 
 ![caption = "The difference between calibrated models and uncalibrated ones."](../figures/calibrate_adaboost.png)
-
+![caption = "The PR curve for the calibrated random forest."](../figures/calibrate_random_forest.png)
 After calibration, the PR curve jumps to almost the same level as other approaches.
 
 
