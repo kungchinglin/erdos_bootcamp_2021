@@ -1,4 +1,4 @@
-# Erdos Bootcamp 2021
+# Predicting Viral Posts on Reddit
 
 # Team Members: 
 - [Dyas Utomo](https://www.linkedin.com/in/dyasutomo/)
@@ -6,7 +6,14 @@
 - [Kung-Ching Lin](https://www.linkedin.com/in/kung-ching-lin/)
 - [Shahnawaz Khalid](https://www.linkedin.com/in/shahnawaz-khalid-252345116/)
 
-## Introduction and Motivation
+# Introduction and Motivation
+
+With the surge of meme stocks in the beginning of the year, more and more people have started using reddit to make trading decisions. 
+
+As viral posts may spark the interests of the individual investors, we want to create a classifier predicting whether a post will become popular.
+
+The stakeholders in this project are the traders. If they have information on which posts will become popular, then they can act on it proactively, reaping in heaps of cash.
+
 
 # Data Gathering
 
@@ -180,4 +187,22 @@ The outcome is either "Viral" or "Non-viral". We defined viral posts as ones in 
 To see how the model is built, please explore the side bar on the left for more information. To see details of the implementation, please refer to our [Github](https://github.com/kungchinglin/erdos_bootcamp_2021) page.
 
 
-## Future Work
+# Future Works
+
+Due to the time constraints, we have a few ideas we could not try out but hope to do so in the near future.
+
+## State-of-the-art Models
+For deriving contexts, BERT is an excellent tool. However, we did not have the time to train this model.
+
+## Image Transcription
+For reddit posts, there are a lot of meme posts that became viral. However, we were not able to decipher the contents of the images with our current data gathering techniques. If we have that information, perhaps we can predict the popularity more reliably.
+
+## Translation of Prediction to Other Subreddits
+Right now we can only predict posts in certain subreddits, and the generalization to other subreddits is not yet explored. We hope to investigate whether it is possible to at least extend to similar subreddits with our model.
+
+## More Detailed Inspection on the Mis-classified Posts
+We did not check carefully what posts the models misclassified due to time constraints, but maybe we will gain some insights if we do so.
+
+## Extension to Twitter
+We hope to extend our models to tweets in the near future. We already have the first iteration finished.
+
