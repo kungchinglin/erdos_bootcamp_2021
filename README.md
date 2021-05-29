@@ -19,7 +19,6 @@ The stakeholders in this project are the traders. If they have information on wh
 
 Our dataset consists of all reddit posts from January 1, 2021 to mid May across several financial subreddits. Additionally, we have gathered tweets with certain keywords as well as the stock exchange data for the ticks of interest from the same period. In the following, we will describe the data by category.
 
-
 ## Reddit Posts (Main Contributor: Kung-Ching Lin)
 
 There are two main APIs for reddit posts: PRAW and Pushshift. Although there are numerous features available, we chose to keep the following ones: subreddit, author, title, post body (texts in the posts if any), external links (links to figures, videos, or external websites), submission time, and score (total upvotes minus downvotes). The list of available features can be found here: [PRAW](https://praw.readthedocs.io/en/latest/code_overview/models/submission.html), [Pushshift](https://github.com/pushshift/api).
@@ -131,8 +130,8 @@ From our exploratory data analysis, we considered the following features as our 
 9. The number of emoji counts in the title and the body <br/>
 10. The number of exclamation points and question marks in the title and the body <br/>
 11. The number of uppercases in the title and the body <br/>
-12. The number of tweets, likes, and retweets, and the (weighted) sentiment with specific keywords three days preceding the post submission
-13. The mean upvotes of the author in the specific subreddit up to submission time.
+12. The number of tweets, likes, and retweets, and the (weighted) sentiment with specific keywords three days preceding the post submission <br/>
+13. The mean upvotes of the author in the specific subreddit up to submission time. <br/>
 
 ## Evaluation Metrics
 
@@ -140,16 +139,31 @@ The stakeholders of this project are the traders of the firm, and we believe the
 
 With that in mind, we evaluate our models based on precision-recall curves, with an emphasis for high precision. In our deployed model, the user can freely choose whether they want to be aggressive (high recall) or conservative (high precision).
 
-## Model Selection
+# Training and Model Selection
 
+We train the following models: logistic regression, random forest classifier, XGBoost, AdaBoost, Neural Network with Dense Layer only and Neural Network with LSTM layers. To deal with imbalance data, we modified the weight of the loss function by (100/*x*)-1, where *x* is the percentage of popular posts.
 We have proposed several versions of modeling approaches, each of which yielding similar performance and has room for improvement. It suggests that the features we select may be insufficient for predicting the popularity (high bias).
 
-### TF-IDF (Main Contributors: Ghanashyam Khanal, Dyas Utomo)
+## Combining the numeric data with text data
+**Main Contributor: Ghanashyam Khanal**
 
-![caption = "Summary for TF-IDF models."](./figures/prec_rec_curve_summary_DU.png)
-### Word2Vec (Main Contributors: Ghanashyam Khanal, Dyas Utomo)
+In order to combine the numeric features with the text data we converted the numeric values to words (eg. 21 -> twenty_one) using python package [`num2words`](https://pypi.org/project/num2words/) and joined that with the text features which were then converted to numerical features for the models using various techniques as explained in the next section.
 
-### Probability Calibration Only (Main Contributor: Kung-Ching Lin)
+## Text Data Processing
+In order to obtain the numerical features for the text data we used several text-processing methods as described below.
+
+### TF-IDF and Bag-of-Words (BoW) 
+**Main Contributor: Ghanashyam Khanal, Dyas Utomo, Shahnawaz Khalid**
+
+We used `scikit-learns`'s `sklearn.feature_extraction.text.TfidfVectorizer` and `sklearn.feature_extraction.text.CountVectorizer` as features before training the several models (as described above). 
+
+### Word2Vec 
+**Main Contributor: Ghanashyam Khanal, Dyas Utomo**
+
+Since the `TF-IDF` and `BoW` methods didn't have a great result we moved to `Word2Vec` method using from `gensim` package. `gensim.models.Word2Vec`. We embedded the input text data into 1000 dimensional feature space and trained Logistic regression model.
+
+### Probability Calibration Only 
+**Main Contributor: Kung-Ching Lin**
 
 It is also possible to not perform any vectorization of texts and still get similar performance. In that sense, this model does not detect the context of the posts but only the general sensation (Emojis, uppercases, \!/?). After backward feature selection, we found out that the Twitter information, as well as the post sentiment, do not give any improvement on the model prediction, so we dropped those in our model.
 
@@ -160,14 +174,11 @@ Numerous models have been tried out, including logistic regression, decision tre
 
 After calibration, the PR curve jumps to almost the same level as other approaches.
 
-
 ## Summary
 
-**Features:** We include the following features and combine them via TF-IDF and Word2Vec:
-
-**Training:** We train the following models: logistic regression, random forest classifier, XGBoost, and AdaBoost. To deal with imbalance data, we modified the weight of the loss function by (100/*x*)-1, where *x* is the percentage of popular posts.
-
 **Model Performance:** We compare the models performace using the precision-recall curves. As shown below, model perfomances are more or less similar, but XGBoost gives the best performance.
+
+![caption = "Summary for TF-IDF models."](./figures/prec_rec_curve_summary_DU.png)
 
 
 # Web Application Manual
@@ -205,8 +216,4 @@ We did not check carefully what posts the models misclassified due to time const
 
 ## Extension to Twitter
 We hope to extend our models to tweets in the near future. We already have the first iteration finished.
-<<<<<<< HEAD
-
-=======
->>>>>>> fc2119a0ca8ce65c62d136f3d02d7cad2d98f7f7
 
