@@ -205,5 +205,8 @@ We did not check carefully what posts the models misclassified due to time const
 
 ## Extension to Twitter
 We hope to extend our models to tweets in the near future. We already have the first iteration finished.
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc2119a0ca8ce65c62d136f3d02d7cad2d98f7f7
 
