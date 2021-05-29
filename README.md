@@ -6,7 +6,7 @@
 - [Kung-Ching Lin](https://www.linkedin.com/in/kung-ching-lin/)
 - [Shahnawaz Khalid](https://www.linkedin.com/in/shahnawaz-khalid-252345116/)
 
-# Our presentation slide can be found [here](https://docs.google.com/presentation/d/1AX2aQV46H3YItBoZpA3CoL5zidVzwv_6Zi5NElbkz6U/edit?usp=sharing)
+#### Our presentation slide can be found [here](https://docs.google.com/presentation/d/1AX2aQV46H3YItBoZpA3CoL5zidVzwv_6Zi5NElbkz6U/edit?usp=sharing).
 
 # Introduction and Motivation
 
