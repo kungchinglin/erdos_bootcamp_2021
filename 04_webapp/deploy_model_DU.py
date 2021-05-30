@@ -9,11 +9,11 @@ for word in words_to_keep:
     STOPWORDS.remove(word)
 
 import praw
-reddit = praw.Reddit(client_id='8uYrpYeesX3jqw',
-                     client_secret='1jqs2YaVouo9A13SeGRpR8nkwPLgNQ',
-                     username='permanent-resident',
-                     password='4kuKerja!',
-                     user_agent='permanent-residentv1')
+reddit = praw.Reddit(client_id='',
+                     client_secret='',
+                     username='',
+                     password='',
+                     user_agent='')
 
 
 import pickle
